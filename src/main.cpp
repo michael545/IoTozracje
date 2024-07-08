@@ -42,7 +42,7 @@ void connectToWiFi()
 void setup()
 {
   Serial.begin(115200);
-  delay(1000); // Adjusted delay for Serial Monitor initialization
+  delay(1000); // inicializcija
 
   dht.setup(DHTPIN, DHTesp::DHT22);
   connectToWiFi();
@@ -64,7 +64,6 @@ void setup()
     Serial.print(lastValues.humidity);
     Serial.println("%");
 
-    // Check if Wi-Fi is connected
     if (WiFi.status() == WL_CONNECTED)
     {
       ThingSpeak.setField(1, lastValues.temperature);
@@ -85,7 +84,6 @@ void setup()
     }
   }
 
-  // Go to sleep
   Serial.println("Going to sleep now.");
   esp_sleep_enable_timer_wakeup(SLEEP_TIME);
   esp_deep_sleep_start();

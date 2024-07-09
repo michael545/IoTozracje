@@ -12,7 +12,7 @@ DHTesp dht;
 WiFiClient client;
 
 #define WIFI_TIMEOUT_MS 20000
-#define SLEEP_TIME 120e6 // 2 minutes in microseconds
+#define SLEEP_TIME 9e8 // 15 min microseconds
 
 void connectToWiFi()
 {
